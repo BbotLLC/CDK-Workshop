@@ -25,8 +25,9 @@ pip3 install aws_cdk.aws_lambda
 
 cd ..
 
-nohup pycharm-professional cdk-demo/ &>/dev/null
-nohup pycharm-community cdk-demo/ &>/dev/null
+pycharm-professional cdk-demo/ & disown
+pycharm-community cdk-demo/ & disown
+
 
 rm -r -f aws/
 rm awscliv2.zip
