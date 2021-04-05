@@ -1,12 +1,12 @@
 #!/bin/bash
-cd ~
+
 sudo apt-get install python3 python3-pip nodejs npm curl python3-venv git -y
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
 sudo npm install -g aws-cdk
 aws configure --profile cdkdemo
-cd ~
+
 mkdir cdk-demo
 cd cdk-demo
 cdk init app -l=python
@@ -23,6 +23,9 @@ source .venv/bin/activate
 pip3 install -r requirements.txt
 pip3 install aws_cdk.aws_lambda
 
+cd ..
+
+pycharm-professional cdk-demo/
 pycharm-community cdk-demo/
 
 rm -r -f aws/
