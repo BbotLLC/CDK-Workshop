@@ -80,3 +80,45 @@ Remember that we saved our credentials under --profile cdkdemo so ensure you use
     CdkDemoStack(app, "SahmsDemoStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     ```
+4. Finally open the cdk_demo_stack.py file inside the cdk_demo folder and copy and paste the following
+
+    ```python
+    from aws_cdk import core as cdk
+    from aws_cdk import aws_lambda as _lambda
+
+    nameOfLambda="SahmHelperFunction"
+    nameOfFunction="hello.handler" # This is derived from the name of the file inside the Lambda (hello.py) and the function we are calling (handler)
+    nameOfLocation="lambdaCode"
+
+    class CdkDemoStack(cdk.Stack):
+
+        def __init__(self, scope: cdk.Construct, construct_id: str, **kwargs) -> None:
+            super().__init__(scope, construct_id, **kwargs)
+
+            # The code that defines your stack goes here
+            fn = _lambda.Function(self, 
+                                  nameOfLambda, 
+                                  handler=nameOfFunction, 
+                                  runtime=_lambda.Runtime.PYTHON_3_7,
+                                  code=_lambda.Code.from_asset(nameOfLocation))
+    ```
+
+5. You can now preview the changes about to be made by using the diff command
+
+    ```bash
+    cdk diff --profile cdkdemo
+    ```
+
+6. You can deploy your stack
+
+    ```bash
+    cdk deploy --profile cdkdemo
+    ```
+
+7. And you can remove your stack
+
+    ```bash
+    cdk destroy --profile cdkdemo
+    ```
+
+8. You are encouraged to look at the other parameters and play with other modules after this workshop. If you want to learn more please visit [AWS CDK Python Documentation](https://docs.aws.amazon.com/cdk/api/latest/python/aws_cdk.aws_lambda/README.html)
