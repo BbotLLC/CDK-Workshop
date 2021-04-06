@@ -31,3 +31,4 @@ pycharm-community cdk-demo/ & disown
 
 rm -r -f aws/
 rm awscliv2.zip
+exit
