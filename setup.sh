@@ -15,7 +15,7 @@ python3 -m venv .venv
 checkPyCom=$(which pycharm-community)
 checkPyPro=$(which pycharm-professional)
 
-if [[ ${#checkPyCom} = 0 || ${#checkPyCom} > 0 ]];
+if [[ ${#checkPyCom} = 0 || ${#checkPyCom} = 0 ]];
 then
     echo "Do you want to install Pycharm Community Edition?"
     read answer
