@@ -32,8 +32,8 @@ pip3 install aws_cdk.aws_lambda
 
 cd ..
 
-pycharm-professional cdk-demo/ & disown > /dev/null
-pycharm-community cdk-demo/ & disown > /dev/null/
+pycharm-professional cdk-demo/ &>/dev/null & disown 
+pycharm-community cdk-demo/ &>/dev/null & disown
 
 
 rm -r -f $PWD/aws/
