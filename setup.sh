@@ -11,12 +11,19 @@ mkdir cdk-demo
 cd cdk-demo
 cdk init app -l=python
 python3 -m venv .venv
-echo "Do you want to install Pycharm Community Edition?"
-read answer
-answer=${answer,,}
-if [ ${answer::1} == 'y' ]
+
+checkPyCom=$(which pycharm-community)
+checkPyPro=$(which pycharm-professional)
+
+if [[ ${#checkPyCom} = 0 || ${#checkPyCom} > 0 ]];
 then
-    snap install pycharm-community --classic
+    echo "Do you want to install Pycharm Community Edition?"
+    read answer
+    answer=${answer,,}
+    if [ ${answer::1} == 'y' ]
+    then
+        snap install pycharm-community --classic
+    fi
 fi
 
 source .venv/bin/activate
@@ -29,5 +36,5 @@ pycharm-professional cdk-demo/ & disown > /dev/null
 pycharm-community cdk-demo/ & disown > /dev/null/
 
 
-rm -r -f aws/
-rm awscliv2.zip
+rm -r -f $PWD/aws/
+rm $PWD/awscliv2.zip
