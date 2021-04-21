@@ -63,7 +63,8 @@ Here is the meat and potatos of this workshop. You will want to edit some of the
 Remember that we saved our credentials under --profile cdkdemo so ensure you use that flag for this demo and exclude it in your future workflow. 
 
 1. The first thing we will do is create an example Lambda to deploy. Open a terminal inside the CDK-Workshop/cdk-demo folder and type:
-    ```
+    ```bash
+    cd cdk-demo
     sam init
     1 - AWS Quick Start Templates
     1 - Zip
@@ -117,6 +118,7 @@ Remember that we saved our credentials under --profile cdkdemo so ensure you use
 
     ```bash
     cd ..
+    source ./.venv/bin/activate
     cdk diff --profile cdkdemo
     ```
 
