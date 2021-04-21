@@ -41,3 +41,4 @@ pycharm-community cdk-demo/ &>/dev/null & disown
 
 rm -r -f $PWD/aws/
 rm $PWD/awscliv2.zip
+rm $PWD/aws-sam-cli-linux-x86_64.zip
