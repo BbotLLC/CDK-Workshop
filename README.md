@@ -134,4 +134,4 @@ Remember that we saved our credentials under --profile cdkdemo so ensure you use
     cdk destroy --profile cdkdemo
     ```
 
-10. You are encouraged to look at the other parameters and play with other modules after this workshop. If you want to learn more please visit [AWS CDK Python Documentation](https://docs.aws.amazon.com/cdk/api/latest/python/aws_cdk.aws_lambda/README.html)
+10. You are encouraged to look at the other parameters and play with other modules after this workshop. If you want to learn more please visit [AWS CDK Python Documentation](https://docs.aws.amazon.com/cdk/api/latest/python/aws_cdk.aws_lambda/README.html) and [AWS SAM Generate Event](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-local-generate-event.html)
